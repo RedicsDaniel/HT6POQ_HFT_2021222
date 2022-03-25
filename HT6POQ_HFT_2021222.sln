@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31727.386
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HT6POQ_HFT_2021222", "HT6POQ_HFT_2021222\HT6POQ_HFT_2021222.csproj", "{2FC8493E-7341-426B-A304-93D4AE2BA17E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2FC8493E-7341-426B-A304-93D4AE2BA17E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FC8493E-7341-426B-A304-93D4AE2BA17E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FC8493E-7341-426B-A304-93D4AE2BA17E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FC8493E-7341-426B-A304-93D4AE2BA17E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A25153FF-21F2-466C-94D3-87008ECBE290}
+	EndGlobalSection
+EndGlobal
