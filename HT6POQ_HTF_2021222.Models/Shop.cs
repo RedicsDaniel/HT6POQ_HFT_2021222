@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HT6POQ_HTF_2021222.Models
 {
-    class Shop
+    public class Shop
     {
     }
 }
