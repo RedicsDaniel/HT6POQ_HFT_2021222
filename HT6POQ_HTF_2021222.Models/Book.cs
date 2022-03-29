@@ -24,5 +24,6 @@ namespace HT6POQ_HTF_2021222.Models
         public virtual Author Author { get; set; }
         [NotMapped]
         public virtual Shop Shop { get; set; }
+        
     }
 }
