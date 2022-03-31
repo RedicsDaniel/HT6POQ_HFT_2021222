@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HT6POQ_HFT_2021222.Repository.Data;
+using System;
 
 namespace HT6POQ_HFT_2021222
 {
@@ -6,7 +7,8 @@ namespace HT6POQ_HFT_2021222
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            BookDbContext db = new BookDbContext();
+            ;
         }
     }
 }
