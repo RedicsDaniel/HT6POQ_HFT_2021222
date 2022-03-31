@@ -19,8 +19,4 @@
     <ProjectReference Include="..\HT6POQ_HTF_2021222.Models\HT6POQ_HTF_2021222.Models.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-
 </Project>
