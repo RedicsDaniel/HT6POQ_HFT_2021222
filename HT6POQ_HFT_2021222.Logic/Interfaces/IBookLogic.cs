@@ -12,7 +12,7 @@ namespace HT6POQ_HFT_2021222.Logic.Interfaces
         void create(Book book);
         Book Read(int id);
         void Delete(int id);
-        void Update(Book car);
+        void Update(Book book);
 
         public double AVGPricesX();
         IEnumerable<Book> GetAll();

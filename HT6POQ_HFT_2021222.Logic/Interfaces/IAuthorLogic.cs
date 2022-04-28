@@ -9,10 +9,10 @@ namespace HT6POQ_HFT_2021222.Logic.Interfaces
 {
     public interface IAuthorLogic
     {
-        void Create(Author brand);
+        void Create(Author author);
         Author Read(int id);
         void Delete(int id);
-        void Update(Author brand);
+        void Update(Author author);
         IEnumerable<Author> GetAll();
         IEnumerable<string> BrandWithMostCar();
     }
