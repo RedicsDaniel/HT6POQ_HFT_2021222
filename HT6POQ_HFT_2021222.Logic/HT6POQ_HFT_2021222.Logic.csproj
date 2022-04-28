@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -7,6 +7,11 @@
   <ItemGroup>
     <ProjectReference Include="..\HT6POQ_HFT_2021222.Repository\HT6POQ_HFT_2021222.Repository.csproj" />
     <ProjectReference Include="..\HT6POQ_HTF_2021222.Models\HT6POQ_HTF_2021222.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+    <Folder Include="Repositories\" />
   </ItemGroup>
 
 </Project>
