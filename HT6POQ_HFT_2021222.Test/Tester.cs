@@ -139,6 +139,7 @@ namespace HT6POQ_HFT_2021222.Test
             };
             Assert.That(res, Is.EqualTo(exp));
         }
+        public void 
         [Test]
         public void CreateFakeExistingBOok()
         {
@@ -146,6 +147,24 @@ namespace HT6POQ_HFT_2021222.Test
             bookLogic.create(testBook);
             mockBookRepo.Verify(t => t.Create(It.IsAny<Book>()), Times.Once);
 
+        }
+        [Test]
+        public void CreateFakeShop()
+        {
+            Assert.Throws<ArgumentException>(() => shopLogic.Create(null));
+            mockShopRepo.Verify(t => t.Create(It.IsAny<Shop>()), Times.Never);
+        }
+        [Test]
+        public void CreateFakeAuthor()
+        {
+            Author testauthor = new Author()
+            {
+                Age = 15,
+                Id = 1,
+                Name = "Josef"
+            };
+            authorLogic.Create(testauthor);
+            mockAuthorRepo.Verify(t => t.Create(It.IsAny<Author>()), Times.Once);
         }
 
     }
