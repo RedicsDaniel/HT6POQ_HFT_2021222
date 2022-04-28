@@ -55,12 +55,12 @@ namespace HT6POQ_HFT_2021222.Repository.Data
             Shop s5 = new Shop() { Id = 5, Name = "LM Store", Location = "Tampa" };
             #endregion
             #region books
-            Book b1 = new Book() { Id = 1, Title = "Halott város", PageNumber = 300, Type = BookType.Horror,AuthorId = 2,ShopId =s1.Id  };
-            Book b2 = new Book() { Id = 2, Title = "Ego hatalma", PageNumber = 340, Type = BookType.Classic,AuthorId = 3,ShopId = s2.Id };
-            Book b3 = new Book() { Id = 3, Title = "Ember a Holdon", PageNumber = 100, Type = BookType.Comic,AuthorId = 4, ShopId = s3.Id };
-            Book b4 = new Book() { Id = 4, Title = "Sherlock Holmes", PageNumber = 500, Type = BookType.Detective, AuthorId =5 ,ShopId = s5.Id };
-            Book b5 = new Book() { Id = 5, Title = "Egy kutya 7 élete", PageNumber = 80, Type = BookType.Fantasy , AuthorId = 3,ShopId = s2.Id };
-            Book b6 = new Book() { Id = 5, Title = "Holtodiglan", PageNumber = 180, Type = BookType.Mystery, AuthorId = 1, ShopId = s2.Id };
+            Book b1 = new Book() { Id = 1, Title = "Halott város", PageNumber = 300, Type = BookType.Horror,AuthorId = 2,ShopId =s1.Id,Price = 500  };
+            Book b2 = new Book() { Id = 2, Title = "Ego hatalma", PageNumber = 340, Type = BookType.Classic,AuthorId = 3,ShopId = s2.Id, Price = 1500 };
+            Book b3 = new Book() { Id = 3, Title = "Ember a Holdon", PageNumber = 100, Type = BookType.Comic,AuthorId = 4, ShopId = s3.Id, Price = 2500 };
+            Book b4 = new Book() { Id = 4, Title = "Sherlock Holmes", PageNumber = 500, Type = BookType.Detective, AuthorId =5 ,ShopId = s5.Id, Price = 5500 };
+            Book b5 = new Book() { Id = 5, Title = "Egy kutya 7 élete", PageNumber = 80, Type = BookType.Fantasy , AuthorId = 3,ShopId = s2.Id, Price = 10500 };
+            Book b6 = new Book() { Id = 5, Title = "Holtodiglan", PageNumber = 180, Type = BookType.Mystery, AuthorId = 1, ShopId = s2.Id, Price = 4500 };
             #endregion
 
             modelBuilder.Entity<Author>().HasData(a1, a2, a3, a4, a5);

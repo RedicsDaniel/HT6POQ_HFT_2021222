@@ -49,6 +49,7 @@ namespace HT6POQ_HFT_2021222.Repository.Repositories
             NewBook.Author = book.Author;
             NewBook.AuthorId = book.AuthorId;
             NewBook.Type = book.Type;
+            NewBook.Price = book.Price;
             db.SaveChanges();
         }
     }

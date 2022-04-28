@@ -14,6 +14,7 @@ namespace HT6POQ_HTF_2021222.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Title { get; set; }
+        public int Price { get; set; }
         public int PageNumber { get; set; }
         public BookType Type { get;set; }
         [ForeignKey(nameof(Author))]

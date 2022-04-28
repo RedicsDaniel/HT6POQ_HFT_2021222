@@ -18,19 +18,24 @@ namespace HT6POQ_HFT_2021222.Logic.Logics
             this.br = br;
         }
 
-        public IEnumerable<Book> AverageCarSellers()
+        public IEnumerable<Author> AveragePricedAuthor()
         {
-            throw new NotImplementedException();
+            return from x in br.GetAll()
+                   where x.Price > 1000 && x.Price < 2000
+                   select x.Author;
         }
 
-        public IEnumerable<KeyValuePair<string, double>> AveragePrice()
+        public IEnumerable<KeyValuePair<string, double>> AverageBookPriceByShops()
         {
-            throw new NotImplementedException();
+            return from x in br.GetAll()
+                   group x by x.Shop.Name into grp
+                   select new KeyValuePair<string, double>
+                   (grp.Key, grp.Average(s => s.Price));
         }
 
-        public double AVGPricesX()
+        public double AVGPricesOfBooks()
         {
-            throw new NotImplementedException();
+            return br.GetAll().Average(b => b.Price);
         }
 
         public void create(Book book)
@@ -47,9 +52,11 @@ namespace HT6POQ_HFT_2021222.Logic.Logics
             br.Delete(id);
         }
 
-        public IEnumerable<Book> ExpensiveCarSellerS()
+        public IEnumerable<Shop> ExpensiveBookStores()
         {
-            throw new NotImplementedException();
+            return from x in br.GetAll()
+                   where x.Price > 1000
+                   select x.Shop;
         }
 
         public IEnumerable<Book> GetAll()
@@ -57,19 +64,26 @@ namespace HT6POQ_HFT_2021222.Logic.Logics
             return br.GetAll();
         }
 
-        public IEnumerable<Book> LeastExpensiveCarSeller()
+        public IEnumerable<Shop> MostExpensiveBookStore()
         {
-            throw new NotImplementedException();
+            return (from x in br.GetAll()
+                    orderby x.Price descending
+                    select x.Shop).Take(1);
         }
 
-        public IEnumerable<KeyValuePair<string, int>> MostExpensiveCarPricesByBrands()
+        public IEnumerable<KeyValuePair<string, int>> MostExpensiveBooksByStores()
         {
-            throw new NotImplementedException();
+            return from x in br.GetAll()
+                   group x by x.Shop.Name into grp
+                   select new KeyValuePair<string, int>
+                   (grp.Key, grp.Max(b => b.Price));
         }
 
-        public IEnumerable<Book> MostExpensiveCarSeller()
+        public IEnumerable<Shop> LeastExpensiveBookStore()
         {
-            throw new NotImplementedException();
+            return (from x in br.GetAll()
+                    orderby x.Price
+                    select x.Shop).Take(1);
         }
 
         public Book Read(int id)
@@ -77,9 +91,9 @@ namespace HT6POQ_HFT_2021222.Logic.Logics
             return br.Read(id);
         }
 
-        public int SumPicesOfCars()
+        public int SumPricesOfBooks()
         {
-            throw new NotImplementedException();
+            return br.GetAll().Sum(b => b.Price);
         }
 
         public void Update(Book book)

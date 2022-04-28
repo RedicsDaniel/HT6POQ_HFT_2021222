@@ -18,9 +18,11 @@ namespace HT6POQ_HFT_2021222.Logic.Logics
             this.ar = ar;
         }
 
-        public IEnumerable<string> BrandWithMostCar()
+        public IEnumerable<string> AuthorWithMostBook()
         {
-            throw new NotImplementedException();
+            return (from x in ar.GetAll()
+                    orderby x.Books.Count() descending
+                    select x.Name).Take(1);
         }
 
         public void Create(Author author)

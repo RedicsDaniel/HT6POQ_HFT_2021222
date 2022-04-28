@@ -14,14 +14,14 @@ namespace HT6POQ_HFT_2021222.Logic.Interfaces
         void Delete(int id);
         void Update(Book book);
 
-        public double AVGPricesX();
+        public double AVGPricesOfBooks();
         IEnumerable<Book> GetAll();
-        IEnumerable<Book> ExpensiveCarSellerS();
-        IEnumerable<Book> MostExpensiveCarSeller();
-        public IEnumerable<Book> LeastExpensiveCarSeller();
-        public IEnumerable<KeyValuePair<string, double>> AveragePrice();
-        public IEnumerable<KeyValuePair<string, int>> MostExpensiveCarPricesByBrands();
-        int SumPicesOfCars();
-        public IEnumerable<Book> AverageCarSellers();
+        IEnumerable<Shop> ExpensiveBookStores();
+        IEnumerable<Shop> MostExpensiveBookStore();
+        public IEnumerable<Shop> LeastExpensiveBookStore();
+        public IEnumerable<KeyValuePair<string, double>> AverageBookPriceByShops();
+        public IEnumerable<KeyValuePair<string, int>> MostExpensiveBooksByStores();
+        int SumPricesOfBooks();
+        public IEnumerable<Author> AveragePricedAuthor();
     }
 }

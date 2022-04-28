@@ -14,6 +14,6 @@ namespace HT6POQ_HFT_2021222.Logic.Interfaces
         void Delete(int id);
         void Update(Author author);
         IEnumerable<Author> GetAll();
-        IEnumerable<string> BrandWithMostCar();
+        IEnumerable<string> AuthorWithMostBook();
     }
 }
