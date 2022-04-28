@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HT6POQ_HTF_2021222.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,11 @@ namespace HT6POQ_HFT_2021222.Logic.Interfaces
 {
     public interface IShopLogic
     {
+        void Create(Shop car);
+        Shop Read(int id);
+        void Delete(int id);
+        void Update(Shop car);
+        IEnumerable<Shop> GetAll();
+
     }
 }
