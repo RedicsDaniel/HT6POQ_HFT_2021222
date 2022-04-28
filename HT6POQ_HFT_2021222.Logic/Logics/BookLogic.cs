@@ -21,7 +21,7 @@ namespace HT6POQ_HFT_2021222.Logic.Logics
         public IEnumerable<Author> AveragePricedAuthor()
         {
             return from x in br.GetAll()
-                   where x.Price > 1000 && x.Price < 2000
+                   where x.Price > 900 && x.Price < 2000
                    select x.Author;
         }
 
@@ -99,6 +99,14 @@ namespace HT6POQ_HFT_2021222.Logic.Logics
         public void Update(Book book)
         {
             br.Update(book);
+        }
+
+        public IEnumerable<KeyValuePair<string, int>> LeastExpensiveBooksByStores()
+        {
+            return from x in br.GetAll()
+                   group x by x.Shop.Name into grp
+                   select new KeyValuePair<string, int>
+                   (grp.Key, grp.Min(b => b.Price));
         }
     }
 }

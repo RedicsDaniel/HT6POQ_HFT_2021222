@@ -21,6 +21,7 @@ namespace HT6POQ_HFT_2021222.Logic.Interfaces
         public IEnumerable<Shop> LeastExpensiveBookStore();
         public IEnumerable<KeyValuePair<string, double>> AverageBookPriceByShops();
         public IEnumerable<KeyValuePair<string, int>> MostExpensiveBooksByStores();
+        public IEnumerable<KeyValuePair<string, int>> LeastExpensiveBooksByStores();
         int SumPricesOfBooks();
         public IEnumerable<Author> AveragePricedAuthor();
     }

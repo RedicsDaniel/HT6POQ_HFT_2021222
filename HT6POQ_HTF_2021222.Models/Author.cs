@@ -19,18 +19,6 @@ namespace HT6POQ_HTF_2021222.Models
         public int NumberOfBooks { get; set; }
         [NotMapped]
         public virtual ICollection<Book> Books { get; set; }
-        public Author()
-        {
-            Books = new HashSet<Book>();
-        }
-        public override int GetHashCode()
-        {
-            return this.Name.GetHashCode() * Id*5;
-        }
-        public override string ToString()
-        {
-            return this.Name;
-        }
-
+       
     }
 }

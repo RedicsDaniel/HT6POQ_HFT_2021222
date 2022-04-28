@@ -20,9 +20,10 @@ namespace HT6POQ_HFT_2021222.Logic.Logics
 
         public IEnumerable<string> AuthorWithMostBook()
         {
-            return (from x in ar.GetAll()
-                    orderby x.Books.Count() descending
-                    select x.Name).Take(1);
+            //return (from x in ar.GetAll()
+            //        orderby x.Books.Count() descending
+            //        select x.Name).Take(1);
+            return ar.GetAll().OrderBy(x => x.Books.Count()).Select(x => x.Name);
         }
 
         public void Create(Author author)
