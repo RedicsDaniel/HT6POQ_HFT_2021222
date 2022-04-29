@@ -6,7 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HT6POQ_HFT_2021222.Repository\HT6POQ_HFT_2021222.Repository.csproj" />
+    <PackageReference Include="ConsoleMenu-simple" Version="2.4.3" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.8" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\HT6POQ_HTF_2021222.Models\HT6POQ_HTF_2021222.Models.csproj" />
   </ItemGroup>
 
