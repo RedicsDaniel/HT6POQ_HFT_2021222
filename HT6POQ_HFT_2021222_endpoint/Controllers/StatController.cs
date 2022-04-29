@@ -1,4 +1,5 @@
 ﻿using HT6POQ_HFT_2021222.Logic.Interfaces;
+using HT6POQ_HTF_2021222.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -30,29 +31,48 @@ namespace HT6POQ_HFT_2021222_endpoint.Controllers
             return bl.AVGPricesOfBooks();
         }
 
-        // GET api/<StatController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet]
+        public IEnumerable<KeyValuePair<string,double>> AverageBookPriceByShops()
         {
-            return "value";
+            return bl.AverageBookPriceByShops();
         }
 
-        // POST api/<StatController>
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpGet]
+        public IEnumerable<Author> AveragePricedAuthors()
         {
+            return bl.AveragePricedAuthor();
+        }
+        [HttpGet]
+        public IEnumerable<Shop> ExpensiveBookStores()
+        {
+            return bl.ExpensiveBookStores();
         }
 
-        // PUT api/<StatController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpGet]
+        public IEnumerable<Shop> MostExpensiveBookStore()
         {
+            return bl.MostExpensiveBookStore();
         }
 
-        // DELETE api/<StatController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpGet]
+        public IEnumerable<KeyValuePair<string,int>> MostExpensiveBooksByStores()
         {
+            return bl.MostExpensiveBooksByStores();
+        }
+        [HttpGet]
+        public IEnumerable<Shop> LeastExpensiveBookStore()
+        {
+            return bl.LeastExpensiveBookStore();
+        }
+        [HttpGet]
+        public IEnumerable<KeyValuePair<string, int>> LeastExpensiveBooksByStores()
+        {
+            return bl.LeastExpensiveBooksByStores();
+        }
+        [HttpGet]
+        public IEnumerable<string> AuthorWithMostBook()
+        {
+            return al.AuthorWithMostBook();
         }
     }
 }

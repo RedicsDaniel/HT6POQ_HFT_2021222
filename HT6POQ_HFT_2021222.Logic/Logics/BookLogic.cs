@@ -108,5 +108,6 @@ namespace HT6POQ_HFT_2021222.Logic.Logics
                    select new KeyValuePair<string, int>
                    (grp.Key, grp.Min(b => b.Price));
         }
+        
     }
 }

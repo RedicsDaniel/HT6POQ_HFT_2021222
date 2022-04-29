@@ -21,6 +21,10 @@ namespace HT6POQ_HTF_2021222.Models
         [NotMapped]
         [JsonIgnore]
         public virtual ICollection<Book> Books { get; set; }
-       
+        public override bool Equals(object obj)
+        {
+            Author other = obj as Author;
+            return this.Name == other.Name;
+        }
     }
 }

@@ -90,7 +90,6 @@ namespace HT6POQ_HFT_2021222.Test
         public void MostExpensiveBookStore()
         {
             var res = bookLogic.MostExpensiveBookStore();
-            ;
             var exp = new List<Shop>()
             { new Shop()
             {
@@ -113,6 +112,7 @@ namespace HT6POQ_HFT_2021222.Test
             };
             Assert.That(res, Is.EqualTo(exp));
         }
+        
         [Test]
         public void AverageBookPricesByShops()
         {
@@ -139,7 +139,6 @@ namespace HT6POQ_HFT_2021222.Test
             };
             Assert.That(res, Is.EqualTo(exp));
         }
-        
         [Test]
         public void CreateFakeExistingBOok()
         {
@@ -166,6 +165,13 @@ namespace HT6POQ_HFT_2021222.Test
             authorLogic.Create(testauthor);
             mockAuthorRepo.Verify(t => t.Create(It.IsAny<Author>()), Times.Once);
         }
+        [Test]
+        public void AuthorsWithMostBOok()
+        {
+            var res = authorLogic.AuthorWithMostBook();
+
+        }
+        
 
     }
 }
