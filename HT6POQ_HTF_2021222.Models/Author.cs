@@ -26,5 +26,9 @@ namespace HT6POQ_HTF_2021222.Models
         //    Author other = obj as Author;
         //    return this.Name == other.Name;
         //}
+        public override string ToString()
+        {
+            return this.Name;
+        }
     }
 }

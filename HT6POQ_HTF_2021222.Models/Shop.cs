@@ -23,5 +23,9 @@ namespace HT6POQ_HTF_2021222.Models
         {
             Books = new HashSet<Book>();
         }
+        public override string ToString()
+        {
+            return this.Name;
+        }
     }
 }
