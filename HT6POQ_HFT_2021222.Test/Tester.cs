@@ -139,7 +139,7 @@ namespace HT6POQ_HFT_2021222.Test
             };
             Assert.That(res, Is.EqualTo(exp));
         }
-        public void 
+        
         [Test]
         public void CreateFakeExistingBOok()
         {

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace HT6POQ_HFT_2021222_endpoint.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class AuthorController : ControllerBase
     {
