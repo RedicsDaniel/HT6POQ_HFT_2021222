@@ -119,12 +119,14 @@ namespace HT6POQ_HFT_2021222
                     Console.WriteLine("Enter price : ");
                     inv.Price = int.Parse(Console.ReadLine());
                     service.Put(inv, "/book");
+                    Option(service);
                 }
                 else if (x == 4)
                 {
                     Console.WriteLine("Enter ID: ");
                     int id = int.Parse(Console.ReadLine());
                     service.Delete(id, "book");
+                    Option(service);
                 }
                 else
                 {
@@ -162,6 +164,7 @@ namespace HT6POQ_HFT_2021222
                     au.Nationality = m;
                     au.NumberOfBooks = k;
                     service.Post<Author>(au, "/author");
+                    Option(service);
                 }
                 else if (a == 3)
                 {
@@ -181,12 +184,14 @@ namespace HT6POQ_HFT_2021222
                     o.Nationality = m;
                     o.NumberOfBooks = k;
                     service.Put(o, "/author");
+                    Option(service);
                 }
                 else if (a == 4)
                 {
                     Console.WriteLine("Enter an ID : ");
                     int e = int.Parse(Console.ReadLine());
                     service.Delete(e, "author");
+                    Option(service);
                 }
             }
             else if (res == 6)
@@ -206,7 +211,33 @@ namespace HT6POQ_HFT_2021222
                 }
                 else if (f == 2)
                 {
-
+                    Console.WriteLine("Enter a name : ");
+                    string c = Console.ReadLine();
+                    Console.WriteLine("Enter a location : ");
+                    string log = Console.ReadLine();
+                    Shop x = new Shop();
+                    x.Name = c;
+                    x.Location = log;
+                    service.Post<Shop>(x, "/shop");
+                    Option(service);
+                }
+                else if (f == 3)
+                {
+                    Console.WriteLine("Enter an ID : ");
+                    int id = int.Parse(Console.ReadLine());
+                    var ress = service.GetSingle<Shop>($"/shop/{id}");
+                    Console.WriteLine("Enter a name : ");
+                    ress.Name = Console.ReadLine();
+                    Console.WriteLine("Enter a location : ");
+                    ress.Location = Console.ReadLine();
+                    service.Put<Shop>(ress, "/shop");
+                    Option(service);
+                }
+                else if (f == 4)
+                {
+                    Console.WriteLine("Enter an ID : ");
+                    int d = int.Parse(Console.ReadLine());
+                    service.Delete(d, "shop");
                 }
             }
         }
