@@ -2,6 +2,8 @@
 using ConsoleTools;
 using HT6POQ_HTF_2021222.Models;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace HT6POQ_HFT_2021222
@@ -239,6 +241,64 @@ namespace HT6POQ_HFT_2021222
                     int d = int.Parse(Console.ReadLine());
                     service.Delete(d, "shop");
                 }
+            }
+            else if (res == 7)
+            {
+                var u = service.GetSingle<int>("/stat/AVGPRicesOfBooks");
+                Console.WriteLine("Summed prices of books : "+u);
+                Console.WriteLine("----------------------------");
+                var u2 = service.GetSingle<IEnumerable<KeyValuePair<string, double>>>("/stat/AverageBookPriceByShops");
+                Console.WriteLine("Average bookprice by stores : ");
+                foreach (var item in u2)
+                {
+                    Console.WriteLine(item.Key + " - " +item.Value);
+                }
+                Console.WriteLine("----------------------------");
+                var u3 = service.GetSingle<double>("/stat/AVGPricesOfBooks");
+                Console.WriteLine("average price of all books - "+u3 );
+                Console.WriteLine("----------------------------");
+                var u4 = service.GetSingle<IEnumerable<Author>>("/stat/AveragePricedAuthors");
+                Console.WriteLine("Authors that wrote an average priced book : ");
+                foreach (var item in u4)
+                {
+                    Console.WriteLine( item.Name);
+                }
+                Console.WriteLine("----------------------------");
+                var u5 = service.GetSingle<IEnumerable<Shop>>("/stat/ExpensiveBookStores");
+                Console.WriteLine("Stores that sell expensive books - ");
+                foreach (var item in u5)
+                {
+                    Console.WriteLine( item.Name);
+                }
+                Console.WriteLine("----------------------------");
+                var u6 = service.GetSingle<IEnumerable<Shop>>("/stat/MostExpensiveBookStore");
+                foreach (var item in u6)
+                {
+                    Console.WriteLine("Most expensive bookstore : "+item.Name);
+                }
+                Console.WriteLine("----------------------------");
+                var u7 = service.GetSingle<IEnumerable<KeyValuePair<string, int>>>("/stat/MostExpensiveBooksByStores");
+                Console.WriteLine("Most expensive books by store : ");
+                foreach (var item in u7)
+                {
+                    Console.WriteLine(item.Key+ " - "+item.Value);
+                }
+                Console.WriteLine("----------------------------");
+                var u8 = service.GetSingle<IEnumerable<KeyValuePair<string, int>>>("/stat/LeastExpensiveBooksByStores");
+                Console.WriteLine("Least expensive books by store : ");
+                foreach (var item in u8)
+                {
+                    Console.WriteLine(item.Key + " - " + item.Value);
+                }
+                Console.WriteLine("----------------------------");
+                var u9 = service.GetSingle<IEnumerable<string>>("/stat/AuthorWithMostBook");
+                foreach (var item in u9)
+                {
+                    Console.WriteLine("Author with most books : "+item);
+                }
+                Console.WriteLine("----------------------------");
+                Option(service);
+
             }
         }
     }
