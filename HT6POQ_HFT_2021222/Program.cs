@@ -107,6 +107,105 @@ namespace HT6POQ_HFT_2021222
                 {
                     Console.WriteLine("Enter an ID : ");
                     int y = int.Parse(Console.ReadLine());
+                    var inv = service.GetSingle<Book>($"/book{y}");
+                    Console.WriteLine("Enter title : ");
+                    inv.Title = Console.ReadLine();
+                    Console.WriteLine("Enter pagenumber : ");
+                    inv.PageNumber = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Enter ShopID : ");
+                    inv.ShopId = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Enter AuthorID : ");
+                    inv.AuthorId = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Enter price : ");
+                    inv.Price = int.Parse(Console.ReadLine());
+                    service.Put(inv, "/book");
+                }
+                else if (x == 4)
+                {
+                    Console.WriteLine("Enter ID: ");
+                    int id = int.Parse(Console.ReadLine());
+                    service.Delete(id, "book");
+                }
+                else
+                {
+                    Option(service);
+                }
+            }
+            else if (res == 5)
+            {
+                Console.WriteLine("1 : Author Get");
+                Console.WriteLine("2 : Author Post");
+                Console.WriteLine("3 : Author Put");
+                Console.WriteLine("4 : Author Delete");
+                int a = int.Parse(Console.ReadLine());
+                if (a == 1)
+                {
+                    Console.WriteLine("Enter ID of searched author : ");
+                    int z = int.Parse(Console.ReadLine());
+                    var resm = service.GetSingle<Author>($"/author/{z}");
+                    Console.WriteLine(resm.Name);
+                    Option(service);
+                }
+                else if (a == 2)
+                {
+                    Console.WriteLine("Enter age : ");
+                    int f = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Enter name : ");
+                    string n = Console.ReadLine();
+                    Console.WriteLine("Enter nationality : ");
+                    string m = Console.ReadLine();
+                    Console.WriteLine("Enter number of books");
+                    int k = int.Parse(Console.ReadLine());
+                    Author au = new Author();
+                    au.Age = f;
+                    au.Name = n;
+                    au.Nationality = m;
+                    au.NumberOfBooks = k;
+                    service.Post<Author>(au, "/author");
+                }
+                else if (a == 3)
+                {
+                    Console.WriteLine("Enter an ID : ");
+                    int l = int.Parse(Console.ReadLine());
+                    var o = service.GetSingle<Author>($"/author/{l}");
+                    Console.WriteLine("Enter age : ");
+                    int f = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Enter name : ");
+                    string n = Console.ReadLine();
+                    Console.WriteLine("Enter nationality : ");
+                    string m = Console.ReadLine();
+                    Console.WriteLine("Enter number of books");
+                    int k = int.Parse(Console.ReadLine());
+                    o.Age = f;
+                    o.Name = n;
+                    o.Nationality = m;
+                    o.NumberOfBooks = k;
+                    service.Put(o, "/author");
+                }
+                else if (a == 4)
+                {
+                    Console.WriteLine("Enter an ID : ");
+                    int e = int.Parse(Console.ReadLine());
+                    service.Delete(e, "author");
+                }
+            }
+            else if (res == 6)
+            {
+                Console.WriteLine("1 : Shop Get");
+                Console.WriteLine("2 : Shop Post");
+                Console.WriteLine("3 : Shop Put");
+                Console.WriteLine("4 : Shop Delete");
+                int f = int.Parse(Console.ReadLine());
+                if (f == 1)
+                {
+                    Console.WriteLine("Enter an ID : ");
+                    int i = int.Parse(Console.ReadLine());
+                    var res3 = service.GetSingle<Shop>($"/shop/{i}");
+                    Console.WriteLine(res3.Name);
+                    Option(service);
+                }
+                else if (f == 2)
+                {
 
                 }
             }
