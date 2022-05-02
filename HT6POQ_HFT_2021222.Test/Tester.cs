@@ -169,9 +169,29 @@ namespace HT6POQ_HFT_2021222.Test
         public void AuthorsWithMostBOok()
         {
             var res = authorLogic.AuthorWithMostBook();
+        }
+        [Test]
+        public void BookNullCheck()
+        {
+            Book test = null;
+            Assert.That(()=> bookLogic.create(test),Throws.TypeOf<ArgumentException>());
 
         }
-        
+        [Test]
+        public void StoreNullCheck()
+        {
+            Shop test = null;
+            Assert.That(() => shopLogic.Create(test), Throws.TypeOf<ArgumentException>());
+
+        }
+        [Test]
+        public void AuthorNullCheck()
+        {
+            Author test = null;
+            Assert.That(() => authorLogic.Create(test), Throws.TypeOf<ArgumentException>());
+
+        }
+
 
     }
 }
